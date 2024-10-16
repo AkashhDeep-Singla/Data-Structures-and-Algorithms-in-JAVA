@@ -3,7 +3,7 @@ package Games;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Chess {
+public class TicTacToe {
     public static void main(String[] args) {
         String[][] board = new String[3][3];
         for(int row=0; row<board.length; row++) {
