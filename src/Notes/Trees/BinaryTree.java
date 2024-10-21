@@ -1,9 +1,9 @@
-package Notes;
+package Notes.Trees;
 
 import java.util.Scanner;
 
-public class Trees {
-    public Trees() {
+public class BinaryTree {
+    public BinaryTree() {
 
     }
 
@@ -55,7 +55,7 @@ public class Trees {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Trees tree = new Trees();
+        BinaryTree tree = new BinaryTree();
         tree.populate(scan);
         tree.display();
     }
