@@ -1,4 +1,4 @@
-package Algorithms;
+package Algorithms.Sorting;
 
 public class QuickSort {
     public static void quickSort(int[] arr, int low, int high) {
