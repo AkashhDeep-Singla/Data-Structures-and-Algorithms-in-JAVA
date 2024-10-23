@@ -1,7 +1,5 @@
 package Notes.Heaps;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) throws Exception {
         int[] arr = {12,11,13,5,6,7};
@@ -16,6 +14,7 @@ public class Main {
         genHeap.insert(23);
         genHeap.insert(4);
         genHeap.insert(8);
+        genHeap.remove();
         System.out.println(genHeap.heapSort());
     }
 }

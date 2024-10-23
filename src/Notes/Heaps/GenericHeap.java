@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 // here we use the example of min heap
 public class GenericHeap<T extends Comparable<T>> {
-    private ArrayList<T> list;
+    private final ArrayList<T> list;
 
     public GenericHeap() {
         list = new ArrayList<>();
@@ -30,17 +30,17 @@ public class GenericHeap<T extends Comparable<T>> {
 
     public void insert(T value) {
         list.add(value);
-        upheap(list.size()-1);
+        upHeap(list.size()-1);
     }
 
-    private void upheap(int index) {
+    private void upHeap(int index) {
         if(index == 0) {
             return;
         }
         int parent = parent(index);
         if(list.get(index).compareTo(list.get(parent)) < 0) {
             swap(index, parent);
-            upheap(parent);
+            upHeap(parent);
         }
     }
 
@@ -48,16 +48,16 @@ public class GenericHeap<T extends Comparable<T>> {
         if(list.isEmpty()) {
             throw new Exception("Cannot remove from empty Heap");
         }
-        T temp = list.get(0);
-        T last = list.remove(list.size()-1);
+        T temp = list.getFirst();
+        T last = list.removeLast();
         if(!list.isEmpty()) {
             list.set(0, last);
-            downheap(0);
+            downHeap(0);
         }
         return temp;
     }
 
-    private void downheap(int index) {
+    private void downHeap(int index) {
         int min = index;
         int left = left(index);
         int right = right(index);
@@ -69,7 +69,7 @@ public class GenericHeap<T extends Comparable<T>> {
         }
         if(min != index) {
             swap(min, index);
-            downheap(min);
+            downHeap(min);
         }
     }
 
